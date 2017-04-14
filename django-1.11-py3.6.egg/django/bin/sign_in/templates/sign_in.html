@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap 模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+<!--python manage.py collectstatic-->
+    <!--python manage.py makemigrations sign_in-->
+    <!--python manage.py sqlmigrate sign_in 0001-->
+    <link href="static/css/bootstrap.min.united.css" rel="stylesheet">
+    <link href="static/css/config.css" rel="stylesheet">
+    <link href="static/css/sign.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/signin.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="static/js/bootstrap.min.js"></script>
+</head>
+<body  class="text-center  ">
+    <div class="container text-gray-dark col-xs-12 logindev " id="logindev">
+        <div class="row">
+            <div class=" col-xs-10 col-md-8 col-xs-offset-1 col-md-offset-2">
+                <form >
+                    <h5 class="form-signin-heading text-primary">小二丫欢迎您</h5>
+                    <label for="inputPassword" class="sr-only">用户名</label>
+                    <input type="text" id="inputEmail" class="form-control" placeholder="用户名" required autofocus>
+                    <label for="inputPassword" class="sr-only">密码</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="密码  " required>
+                    <!--<div class="checkbox">-->
+                        <!--<label>-->
+                            <!--<input type="checkbox" value="remember-me"> Remember me-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <button class="btn btn-group-xs btn-primary btn-block "
+                            onclick="clickbtn()" style="margin-top:5%"  id="signin">登陆</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="container text-gray-dark col-xs-12 ">
+    <div class="row  hidden" id="confirm">
+        <div class="alert alert-success col-xs-10 col-md-8 col-xs-offset-1 col-md-offset-2">成功！很好地完成了提交。</div>
+    </div>
+</div>
+</body>
+</html>
