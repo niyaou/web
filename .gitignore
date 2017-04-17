@@ -14,6 +14,7 @@ _site
 *.vi
 *.zip
 *~
+zigong_xey
 
 # OS or Editor folders
 ._*
@@ -28,6 +29,7 @@ _site
 *.sublime-workspace
 nbproject
 Thumbs.db
+
 
 # Komodo
 .komodotools

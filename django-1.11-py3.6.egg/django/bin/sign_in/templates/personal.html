@@ -14,7 +14,7 @@
     <meta charset="utf-8">
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
     <script src="static/js/jquery.js"></script>
-    <script src="static/js/signin.js"></script>
+    <script src="static/js/edit.js"></script>
     <!-- 包括所有已编译的插件 -->
     <script src="static/js/bootstrap.min.js"></script>
 </head>
@@ -34,25 +34,35 @@
                         <p class="help-block">当前代理用户名，不可修改.</p>
                     </div>
                     <div class="form-group text-left">
+                        <label>原始密码</label>
+                        <input class="form-control" type="text" id="oldpsw">
+                        <p class="text-danger">请在此密码.</p>
+                    </div>
+                    <div class="form-group text-left">
                         <label>密码</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" id="pswfirst">
                         <p class="text-danger">请在此输入新密码.</p>
                     </div>
                     <div class="form-group text-left">
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" id="pswconfirm">
                         <p class="text-danger">请确认新密码.</p>
                     </div>
                     <div class="form-group text-left">
                         <label>支付宝账号</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" id="ali">
                         <p class="help-block">可在此更改支付宝账号.</p>
+                    </div>
+                    <div class="form-group text-left">
+                        <label>电话</label>
+                        <input class="form-control" type="text" id="phone">
+                        <p class="help-block">可在此更改电话.</p>
                     </div>
                     <div class="form-group text-left">
                         <label>身份证</label>
                         <input class="form-control" type="text" disabled>
                         <p class="help-block">不可更改.</p>
                     </div>
-                    <button  class="btn btn-group-justified  btn-primary">提交</button>
+                    <input  class="btn btn-group-justified  btn-primary" value="提交" onclick="clickbtn()"/>
                 </form>
         </div>
     </div>
