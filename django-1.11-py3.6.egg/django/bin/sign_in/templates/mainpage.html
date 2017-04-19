@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap 模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/jquery.cookie.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="static/js/bootstrap.min.js"></script>
+    <link href="static/css/mainpage.css" rel="stylesheet">
+    <script src="static/js/mainpage.js"></script>
+</head>
+<body class="text-center">
+<!-- 按钮触发模态框 -->
+<!-- 模态框（Modal） -->
+
+    <nav class="navbar navbar-default navbar-fixed-bottom vertical-center">
+        <div class="container col-xs-12">
+        <div class="row clearfix ">
+            <div class="col-xs-4 ">
+                <button type="button" class="btn btn-default" id="main_section">首页</button>
+            </div>
+            <div class="col-xs-4 ">
+                <button type="button" class="btn btn-default" id="booking">下单</button>
+            </div>
+            <div class="col-xs-4 ">
+                <button type="button" class="btn btn-default" id="personal_opt">我的</button>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+
+<div class="container col-xs-12">
+    <div class="row clearfix col-xs-12 top-area ">
+        <div class="col-xs-4 column zone1 vertical-center">
+            <div class="filled-div">
+            <div>tu</div>
+            <div >当日销量</div>
+                <div id="daily_sold" >$ count </div>
+            </div>
+
+        </div>
+        <div class="col-xs-4 column zone2 vertical-center">
+            <div class="filled-div">
+                <div>tu</div>
+                <div >当月销量</div>
+                <div  id="monthy_sold">$ count </div>
+            </div>
+        </div>
+        <div class="col-xs-4 column zone3 vertical-center">
+            <div class="filled-div">
+            <div>tu</div>
+            <div >累计销量</div>
+            <div id="total_sold" >$ count </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="row clearfix col-xs-12 top-area">
+        <div class="col-xs-4 column zone4 vertical-center ">
+            <div class="filled-div vertical-center">
+                <div style="width:28%;float:left" class="text-left">tu</div>
+                <div  style="width:70%;float:right" class="text-right">
+                    <div >团队日销</div>
+                    <div id="team_daily_sold"  style="font-size: 0.6em">$ count </div
+                    ></div>
+
+            </div>
+        </div>
+        <div class="col-xs-4 column zone5 vertical-center">
+            <div class="filled-div vertical-center">
+                <div style="width:28%;float:left" class="text-left">tu</div>
+                <div  style="width:70%;float:right" class="text-right">
+                    <div  >团队月销</div>
+                    <div id="team_monthy_sold"  style="font-size: 0.6em" >$ count </div
+                    ></div>
+
+            </div>
+        </div>
+        <div class="col-xs-4 column zone1 vertical-center">
+            <div class="filled-div vertical-center">
+                <div style="width:10%;float:left" class="text-left">tu</div>
+                <div  style="width:89%;float:right;font-size: 0.6em" class="text-right">
+                    <div >团队累计销量</div>
+                    <div id="team_total_sold">$ count </div      ></div>
+        </div>
+    </div>
+
+    <div class="row clearfix col-xs-12 top-area ">
+        <div class="col-xs-6 column zone1 vertical-center">
+            <div class="filled-div">
+                <div>tu</div>
+                <div >当月团队奖金</div>
+                <div  id="team_monthy_bonus" >$ count </div>
+            </div>
+        </div>
+        <div class="col-xs-6 column zone1 vertical-center">
+            <div class="filled-div">
+                <div>tu</div>
+                <div >当月个人奖金</div>
+                <div  id="personal_monthy_bonus" >$ count </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+</body>
+</html>

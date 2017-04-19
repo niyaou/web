@@ -22,8 +22,10 @@ from django.conf.urls import include
 from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', view.hello),
-     url(r'^hello$', view.hello),
+    url(r'^hello$', view.hello),
     url(r'^home$', view.hello),
     url(r'^login$', view.login),
+    url(r'^Login$', view.login),
+     url(r'^personal.html$', view.edit),
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 

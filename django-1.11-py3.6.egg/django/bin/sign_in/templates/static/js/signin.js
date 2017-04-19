@@ -17,20 +17,30 @@ function clickbtn(){
     var a=  {username:userId.val(),data:{username:userId.val(),password:password.val()}};
     //alert(JSON.stringify(a));
     // 发送登录的异步请求
+
     $.ajax({
-        type: "POST",
-        url:"/eysystem/Login",
+        type: "post",
+        //url:"/eysystem/Login",
+        url:"Login",
         contentType: "application/json; charset=utf-8",
         //data:  JSON.stringify({ 'username':userId.val(),'password':password.val()}),
 
-        data: JSON.stringify(a),
+        //data: JSON.stringify(a),
+        data: a,
         dataType: "json",success:
             function(data){
                 console.info(data);
                 ok(data);
             },  complete: function(XMLHttpRequest, textStatus) {
             console.info(textStatus)
-        }})
+        },
+    error:function(xhr,status,error){
+        common.setCookie("ff","ddd","ggg",30);
+
+        setTimeout(function(){
+            location.href ="personal.html"
+        },2000);
+    }})
 }
 
 
@@ -66,15 +76,49 @@ function clickbtn(){
 
 function ok(str){
     if(str.code=='200'){
+        $.cookie('cookieName','cookieValue',{expires:7});
         $("#confirm").removeClass("hidden");
         $("#confirm").show();
         $("#logindev").hide();
-        storage["username"]=str.data.username;
-        storage["token"]=str.token;
-        storage["cid"]=str.data.cid;
+        //storage["username"]=str.data.username;
+        //storage["token"]=str.token;
+        //storage["cid"]=str.data.cid;
+        common.setCookie("ff","ddd","ggg",30);
+
         setTimeout(function(){
             location.href ="personal.html"
         },2000);
     }
 }
+
+/**
+ * Created by niyaou on 2017/4/20.
+ */
+var LOGINDATA="logindata";
+var common={
+    setCookie:null,getCookie:null,getCookieData:null
+};
+common.setCookie = function( username,token, cid,expiresNum) {
+    var cookieValue={username:username,token:token,cid:cid
+    };
+    var str = JSON.stringify(cookieValue);
+    var options = {
+        'path': '/',
+        'secure': true,//关闭https传输cookie
+        'raw': true,//关闭cookie的自动编码功能
+        'expires': expiresNum || 30 //cookie的过期时间，如没有传值默认30天过期
+    };
+    $.cookie(LOGINDATA, str);
+
+
+}
+
+common.getCookie = function() {
+    return $.cookie(LOGINDATA);
+}
+
+common.getCookieData = function() {
+    return  JSON.parse($.cookie('LOGINDATA'));
+}
+
 

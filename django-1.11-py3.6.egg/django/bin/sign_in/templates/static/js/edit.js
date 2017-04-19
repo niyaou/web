@@ -2,7 +2,9 @@
  * Created by niyaou on 2017/4/14.
  */
 var storage = window.localStorage;
-
+var common={
+    setCookie:null,getCookie:null,getCookieData:null
+};
 // 登录验证
 function clickbtn(){
     console.info('fdsa');
@@ -20,7 +22,11 @@ function clickbtn(){
         alert('从新输入');
         return;
     };
-    var a=  {username:storage["username"],cid:storage["cid"],token:storage["token"],data:{username:storage["username"],aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
+    var data=  common.getCookieData();
+    alert($.cookie(LOGINDATA));
+    alert(data);
+    //var a=  {username:storage["username"],cid:storage["cid"],token:storage["token"],data:{username:storage["username"],aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
+    var a=  {username:data.username,cid:data.cid,token:data.token,data:{username:data.username,aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
 
     // 发送登录的异步请求
     //$.ajax({
@@ -98,7 +104,34 @@ function clickbtn(){
 
 function ok(str){
     if(str.code=='200'){
-    alert('dome')
+        alert('dome')
     }
 }
+
+
+/**
+ * Created by niyaou on 2017/4/20.
+ */
+var LOGINDATA="logindata";
+
+common.setCookie = function( username,token, cid,expiresNum) {
+    var cookieValue={username:username,token:token,cid:cid
+    };
+    var str = JSON.stringify(cookieValue);
+    var options = {
+        'path': '/',
+        'secure': true,//关闭https传输cookie
+        'raw': true,//关闭cookie的自动编码功能
+        'expires': expiresNum || 30 //cookie的过期时间，如没有传值默认30天过期
+    };
+    $.cookie(LOGINDATA, str, options);
+
+}
+
+
+
+common.getCookieData = function() {
+    return ($.cookie('logindata'));
+}
+
 
