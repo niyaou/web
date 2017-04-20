@@ -19,14 +19,14 @@ function clickbtn(){
     // 发送登录的异步请求
 
     $.ajax({
-        type: "post",
-        //url:"/eysystem/Login",
-        url:"Login",
+        type: "POST",
+        url:"/eysystem/Login",
+        //url:"Login",
         contentType: "application/json; charset=utf-8",
         //data:  JSON.stringify({ 'username':userId.val(),'password':password.val()}),
 
-        //data: JSON.stringify(a),
-        data: a,
+        data: JSON.stringify(a),
+        //data: a,
         dataType: "json",success:
             function(data){
                 console.info(data);
@@ -34,13 +34,14 @@ function clickbtn(){
             },  complete: function(XMLHttpRequest, textStatus) {
             console.info(textStatus)
         },
-    error:function(xhr,status,error){
-        common.setCookie("ff","ddd","ggg",30);
-
-        setTimeout(function(){
-            location.href ="personal.html"
-        },2000);
-    }})
+    //error:function(xhr,status,error){
+    //    common.setCookie("ff","ddd","ggg",30);
+    //
+    //    setTimeout(function(){
+    //        location.href ="personal.html"
+    //    },2000);
+    //}
+    })
 }
 
 

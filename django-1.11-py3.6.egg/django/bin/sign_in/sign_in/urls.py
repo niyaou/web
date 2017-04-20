@@ -26,6 +26,8 @@ urlpatterns = [
     url(r'^home$', view.hello),
     url(r'^login$', view.login),
     url(r'^Login$', view.login),
-     url(r'^personal.html$', view.edit),
+    url(r'^personal.html$', view.edit),
+    url(r'^url$', view.postData),
+    url(r'^mainpage.html$', view.url_page),
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 

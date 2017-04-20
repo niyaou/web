@@ -1,7 +1,7 @@
 /**
  * Created by niyaou on 2017/4/14.
  */
-var storage = window.localStorage;
+
 var common={
     setCookie:null,getCookie:null,getCookieData:null
 };
@@ -24,7 +24,7 @@ function clickbtn(){
     };
     var data=  common.getCookieData();
     alert($.cookie(LOGINDATA));
-    alert(data);
+
     //var a=  {username:storage["username"],cid:storage["cid"],token:storage["token"],data:{username:storage["username"],aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
     var a=  {username:data.username,cid:data.cid,token:data.token,data:{username:data.username,aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
 
