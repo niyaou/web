@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="024a1ed3-3294-4883-806f-0e4fed7e8475" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/order.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/bootstrap-table.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/jquery.dataTables.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/order.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/bootstrap-table-zh-CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/bootstrap-table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/jquery.dataTables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/order.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/img/minus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/img/plus.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/sign_in/urls.py" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/sign_in/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/sign_in/view.py" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/sign_in/view.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/edit.js" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/mainpage.js" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/mainpage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/signin.js" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/signin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/index.html" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/order.html" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/config.css" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/config.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/order.js" afterPath="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/order.js" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,47 +29,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="order.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/order.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4814815">
-              <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
-                <marker date="1492710663975" expanded="true" signature="1162:1195" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1162:1214" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1162:1230" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1162:1313" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1214:1230" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1560:1570" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1560:2323" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2024" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2025" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2033" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2040" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2064" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2093" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2105" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2112" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2148" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2234" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2235" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1571:2320" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1593:1992" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1593:2017" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1593:2024" placeholder="..." />
-                <marker date="1492710663975" expanded="true" signature="1660:1992" placeholder="..." />
+                <marker date="1492803991924" expanded="true" signature="1980:2104" placeholder="..." />
+                <marker date="1492803991924" expanded="true" signature="1980:2406" placeholder="..." />
+                <marker date="1492803991924" expanded="true" signature="1980:2459" placeholder="..." />
+                <marker date="1492803991924" expanded="true" signature="1980:2460" placeholder="..." />
+                <marker date="1492803991924" expanded="true" signature="1980:2720" placeholder="..." />
+                <marker date="1492803991924" expanded="true" signature="1980:2723" placeholder="..." />
+                <marker date="1492803991924" expanded="true" signature="2470:2720" placeholder="..." />
+                <marker date="1492803991924" expanded="true" signature="2513:2526" placeholder="..." />
+                <marker date="1492803991924" expanded="true" signature="2626:2639" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="order.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/order.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.086207">
-              <caret line="37" column="51" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="51" />
-              <folding />
+            <state vertical-scroll-proportion="0.6706444">
+              <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,9 +100,7 @@
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/sign_in/models.py" />
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/sign_in/static/css/sign.css" />
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/sign.css" />
-        <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/config.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/index.html" />
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/mainpage.css" />
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/jquery.cookie.js" />
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/mainpage.html" />
@@ -133,8 +116,10 @@
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/sign_in/view.py" />
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/sign_in/static/js/mainpage.js" />
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/order.css" />
-        <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/order.html" />
+        <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/index.html" />
+        <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/config.css" />
         <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/order.js" />
+        <option value="$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/order.html" />
       </list>
     </option>
   </component>
@@ -146,7 +131,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -344,6 +329,154 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-1.11-py3.6.egg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sign_in" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-1.11-py3.6.egg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sign_in" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-1.11-py3.6.egg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sign_in" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-1.11-py3.6.egg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sign_in" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="sign_in" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -353,7 +486,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/workspace/AdminLTE-2.3.11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -362,16 +495,16 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\templates\static\css" />
-      <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\templates\static\js" />
-      <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\templates\static" />
-      <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\sign_in\static" />
-      <recent name="D:\web\zigong_xey\templates\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\sign_in\static\static_dirs" />
       <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\templates\static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\templates\static\js" />
+      <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\templates\static\img" />
+      <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\templates\static\css" />
+      <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\templates\static" />
+      <recent name="D:\web\django-1.11-py3.6.egg\django\bin\sign_in\sign_in\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -461,13 +594,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26940298" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1685761" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06382979" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22222222" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -504,13 +637,52 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+            <marker date="1492803991924" expanded="true" signature="1980:2104" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2406" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2459" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2460" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2720" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2723" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="2470:2720" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="2513:2526" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="2626:2639" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/sign_in.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -518,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -526,7 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -534,9 +704,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -544,9 +712,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="51" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -629,29 +795,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2736573">
-          <caret line="147" column="6" selection-start-line="147" selection-start-column="6" selection-end-line="147" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/sign_in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.071429">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/sign_in/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,7 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39832285">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -675,7 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.7142856">
           <caret line="50" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="114" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,27 +831,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/config.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/order.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.7142856">
           <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/mainpage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -715,7 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11287129">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,7 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -731,7 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -747,47 +871,88 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/img/minus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/img/plus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0357144">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/order.html">
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/mainpage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.086207">
-          <caret line="37" column="51" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.39349112">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/sign_in.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9556213">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/distpicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-227.05191">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/css/config.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7307692">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/static/js/order.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4814815">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-            <marker date="1492710663975" expanded="true" signature="1162:1195" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1162:1214" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1162:1230" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1162:1313" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1214:1230" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1560:1570" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1560:2323" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2024" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2025" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2033" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2040" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2064" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2093" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2105" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2112" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2148" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2234" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2235" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1571:2320" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1593:1992" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1593:2017" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1593:2024" placeholder="..." />
-            <marker date="1492710663975" expanded="true" signature="1660:1992" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2104" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2406" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2459" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2460" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2720" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="1980:2723" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="2470:2720" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="2513:2526" placeholder="..." />
+            <marker date="1492803991924" expanded="true" signature="2626:2639" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django-1.11-py3.6.egg/django/bin/sign_in/templates/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6706444">
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
