@@ -9,14 +9,15 @@ common.getCookieData = function () {
     return ($.cookie('logindata'));
 };
 
+
 var displaying_cid = "data.cid";
 var order_string = "";
 var data = common.getCookieData();
-var goodlist = [];
+var team_member = [ "data.cid"];
 var table_id = "#team_menber";
 var postage_cost = {"expressType": "??", "afterWight": 500, "afterWightPrice": 80, "heavy": 500, "price": 50};
 var jsonData = [{
-    "cid": 5,
+    "cid": 1,
     "aliAccount": "test",
     "authority": 1,
     "password": "123456",
@@ -27,7 +28,7 @@ var jsonData = [{
     "username": "xsong233",
     "status": 1
 }, {
-    "cid": 16,
+    "cid": 2,
     "aliAccount": "testAli",
     "authority": 1,
     "realname": "相似性",
@@ -37,7 +38,7 @@ var jsonData = [{
     "username": "中文测试",
     "status": 1
 }, {
-    "cid": 25,
+    "cid": 3,
     "aliAccount": "adfasdfasdf",
     "authority": 1,
     "password": "123",
@@ -48,7 +49,7 @@ var jsonData = [{
     "username": "宋曦3",
     "status": 1
 }, {
-    "cid": 45,
+    "cid": 4,
     "aliAccount": "test",
     "authority": 1,
     "password": "123456",
@@ -59,7 +60,7 @@ var jsonData = [{
     "username": "xsong233",
     "status": 1
 }, {
-    "cid": 116,
+    "cid": 5,
     "aliAccount": "testAli",
     "authority": 1,
     "password": "123456",
@@ -68,7 +69,7 @@ var jsonData = [{
     "username": "东风科技",
     "status": 1
 }, {
-    "cid": 125,
+    "cid": 6,
     "aliAccount": "adfasdfasdf",
     "authority": 1,
     "password": "123",
@@ -116,7 +117,7 @@ function async_table(cid) {
         current_cid = cid;
 
     displaying_cid = current_cid;
-
+    console.info("displaying_cid:"+displaying_cid+"   cid"+cid);
     $.ajax({
         type: "POST",
         //url: "url",
@@ -174,10 +175,10 @@ function add_table() {
 
     for (one in jsonData) {
         $("#minus" + jsonData[one].cid).click(function () {
-            removeInferior(jsonData[one].cid);
+            removeInferior(this.id.replace(/[^0-9]/ig,""));
         });
         $("#primar" + jsonData[one].cid).click(function () {
-            getInFerior(jsonData[one].cid);
+            getInFerior(this.id.replace(/[^0-9]/ig,""));
         });
     }
 }
@@ -218,6 +219,7 @@ function removeInferior(cid) {
 function getInFerior(cid) {
     $(table_id).empty();
     async_table(cid);
+    team_member.push(cid);
 }
 
 function dealWithCid() {
@@ -228,6 +230,13 @@ function dealWithCid() {
         $("#backtoupset").css("display", "none");
         $("#name_").text("我");
     }
+}
+
+function backToUpSet(){
+    $(table_id).empty();
+    team_member.pop();
+    //alert(team_member[(team_member.length-1)]);
+    async_table(team_member[(team_member.length-1)])
 }
 
 
