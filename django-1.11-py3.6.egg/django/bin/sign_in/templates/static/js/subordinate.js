@@ -12,6 +12,9 @@ common.getCookieData = function () {
 
 var displaying_cid = "data.cid";
 var order_string = "";
+var minus_url="menber_minus.png";
+var minus_invalid="minus_invalid.png";
+var icon_url="";
 var data = common.getCookieData();
 var team_member = [ "data.cid"];
 var table_id = "#team_menber";
@@ -67,6 +70,7 @@ var jsonData = [{
     "registertime": "Apr 12, 2017 1:47:15 PM",
     "superior": 1,
     "username": "东风科技",
+    "realname":"刘涛",
     "status": 1
 }, {
     "cid": 6,
@@ -136,11 +140,11 @@ function async_table(cid) {
             if (data.code == 200) {
                 jsonData = data.data;
                 add_table();
-                dealWithCid();
+
             }
         }, complete: function () {
             add_table();
-            dealWithCid();
+
         },
         error: function (xhr, status, error) {
             console.info(status + xhr + error);
@@ -151,10 +155,15 @@ function async_table(cid) {
 
 
 function add_table() {
+   if(dealWithCid()){
+       icon_url=minus_url;
+   }else{
+       icon_url=minus_invalid;
+   };
     var tbody = $("<tbody></tbody> ");
     for (one in jsonData) {
         var tr = $("<tr></tr> ");
-        var tid = $('  <td class="col-xs-1">' + (one) + '</td>');
+        var tid = $('  <td class="col-xs-1">' + (parseInt(one)+1) + '</td>');
         tid.appendTo(tr);
         var td1 = $('<td class="col-xs-10" ><div class="panel-default" style="margin-bottom: 0px" >             <a style="color:#696969" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo' + jsonData[one].cid + '" >姓名:<span id="name' + jsonData[one].cid + '">' + jsonData[one].realname + '</span>&nbsp;&nbsp;&nbsp;账号:<span id="id' + jsonData[one].cid + '">' + jsonData[one].username + '</span>  </a>   ');
 
@@ -165,7 +174,7 @@ function add_table() {
         td.append($(( "</td>")));
         td.appendTo(tr);
 
-        td = $(( " <td>  <div  >      <img src='static/img/menber_minus.png' style='height:2.5vh;' id='minus" + jsonData[one].cid + "'/>      </div>"));
+        td = $(( " <td>  <div  >      <img src='static/img/"+icon_url+"' style='height:2.5vh;' id='minus" + jsonData[one].cid + "'/>      </div>"));
         td.append($(( "</td>")));
 
         td.appendTo(tr);
@@ -183,6 +192,9 @@ function add_table() {
     }
 }
 function removeInferior(cid) {
+    if(displaying_cid != "data.cid"){
+        return;
+    }
     $(table_id).empty();
     jsonData.pop();
     var current_cid = "data.cid";
@@ -226,9 +238,11 @@ function dealWithCid() {
     if (displaying_cid != "data.cid") {
         $("#backtoupset").css("display", "block");
         $("#name_").text(getData(displaying_cid).realname);
+        return false;
     } else {
         $("#backtoupset").css("display", "none");
         $("#name_").text("我");
+        return true;//允许删除
     }
 }
 

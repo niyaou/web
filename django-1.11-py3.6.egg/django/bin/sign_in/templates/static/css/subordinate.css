@@ -10,7 +10,7 @@ body {
     display: table-cell;
     vertical-align: middle;
 }
-
+a:visited,a:hover{text-decoration:none !important;}
 .with-border {
     border-bottom: 1px solid #ddd;
     padding-left: 15px;

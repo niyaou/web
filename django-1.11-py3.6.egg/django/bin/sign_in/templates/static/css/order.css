@@ -6,6 +6,7 @@ body {
 .bg-green {
     background: #00a65a;
 }
+a{text-decoration:none}
 .info-box-icon {
     border-top-left-radius: 2px;
     border-top-right-radius: 0;
