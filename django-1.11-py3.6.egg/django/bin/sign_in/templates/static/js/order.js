@@ -85,6 +85,9 @@ function async_table() {
                 add_table();
             }
         },
+        complete:function(){
+            //add_table();
+        },
         error: function (xhr, status, error) {
             console.info(status + xhr + error);
             //alert(error);
@@ -178,7 +181,7 @@ function getTotalCost() {
         postFee += postage_cost.afterWightPrice * after_count+postage_cost.price;
         console.info(postFee+"      after_count "+after_count);
         if(after_count==0)
-            postFee+=  postage_cost.afterWightPrice+ postage_cost.price;
+            postFee+=  postage_cost.afterWightPrice;
     } else if (weight > 0) {
         postFee += postage_cost.price;
     }
