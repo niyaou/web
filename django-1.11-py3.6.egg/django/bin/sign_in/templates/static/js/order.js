@@ -38,59 +38,52 @@ $(document).ready(function () {
 
 });
 
+function async_postage(){
+    var data = common.getCookieData();
+    $.ajax({
+        type: "POST",
+        //url: "url",
+        url:"/eysystem/GetPostage",
+
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            cid: data.cid,
+            token:data.token
+        }),
+        dataType: "JSON",
+        success: function (data) {
+            if(data.code==200){
+                postage_cost=data.data[0];
+            }
+        },
+        error: function (xhr, status, error) {
+            console.info(status + xhr + error);
+        }
+    })
+}
+
+
+
 function async_table() {
     var data = common.getCookieData();
     var tr = $("#cloneTr");
     var clonedTr = tr.clone();
     $.ajax({
         type: "POST",
-        url: "url",
-        //url:"/eysystem/GetStatistics",
+        //url: "url",
+        url:"/eysystem/GetGoodList",
 
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-            cid: "data.cid",
-            token: "data.token"
+            cid: data.cid,
+            token:data.token
         }),
-        dataType: "JSON",
-        complete: function (data) {
-            //alert(JSON.stringify(data));
-            console.info(data);
-
-
-            //var table = $('<caption>基本的表格布局</caption>   <thead>                <tr>                <th>名称</th>                <th>城市</th>                </tr>                </thead>    ');
-
-            var tbody = $("<tbody></tbody> ");
-            for (one in jsonData) {
-                var tr = $("<tr></tr> ");
-
-                var td1 = $('<td class="col-xs-10" style="padding:0px"><div class="panel panel-default" style="margin-bottom: 0px" >                    <div class="panel-heading" >                    <h4 class="panel-title" >                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo' + jsonData[one].id + '" > ' + jsonData[one].name + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￥' + jsonData[one].price + '  </a>     </h4>     </div>');
-                if (jsonData[one].description)
-                    td1.append($(( "<div id='collapseTwo" + jsonData[one].id + "' class='panel-collapse collapse'>                <div class='panel-body'>      " + jsonData[one].description + "                          </div>                 </div></div> </td>")));
-
-
-                var td = $(( " <td>  <div style='width:18vw' >   <img src='static/img/plus.png' style='height:2.5vh;;float:left'id='plus" + jsonData[one].id + "'/>      <div style='width:6vw;float: left;' id='count" + jsonData[one].id + "'>0</div>  <img src='static/img/minus.png' style='height:2.5vh;;float:left'id='minus" + jsonData[one].id + "' /> </div>   </div>"));
-                td.append($(( "</td>")));
-
-                td1.appendTo(tr);
-                td.appendTo(tr);
-                tr.appendTo(tbody);
-
-
+        dataType: "json",
+        success:function(data){
+            if(data.code==200){
+                jsonData=data.data;
+                add_table();
             }
-            //tbody.appendTo(table);
-            ( $("#goodlist")).append(tbody);
-            for (one in jsonData) {
-                $("#minus" + jsonData[one].id).click(function () {
-                    plus_total(this.id.substr(this.id.length - 1, 1), -1);
-                });
-                $("#plus" + jsonData[one].id).click(function () {
-                    plus_total(this.id.substr(this.id.length - 1, 1), 1);
-                });
-            }
-
-
-            //alert($("#goodlist").html());
         },
         error: function (xhr, status, error) {
             console.info(status + xhr + error);
@@ -99,11 +92,52 @@ function async_table() {
     })
 }
 
-function plus_total(index, type,if_reset) {
+
+function add_table(){
+    console.info(data);
+
+
+    //var table = $('<caption>基本的表格布局</caption>   <thead>                <tr>                <th>名称</th>                <th>城市</th>                </tr>                </thead>    ');
+
+    var tbody = $("<tbody></tbody> ");
+    for (one in jsonData) {
+        var tr = $("<tr></tr> ");
+
+        var td1 = $('<td class="col-xs-10" style="padding:0px"><div class="panel panel-default" style="margin-bottom: 0px" >                    <div class="panel-heading" >                    <h4 class="panel-title" >                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo' + jsonData[one].id + '" > ' + jsonData[one].name + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￥' + jsonData[one].price + '  </a>     </h4>     </div>');
+        if (jsonData[one].description)
+            td1.append($(( "<div id='collapseTwo" + jsonData[one].id + "' class='panel-collapse collapse'>                <div class='panel-body'>      " + jsonData[one].description + "                          </div>                 </div></div> </td>")));
+
+
+        var td = $(( " <td>  <div style='width:18vw' >   <img src='static/img/plus.png' style='height:2.5vh;;float:left'id='plus" + jsonData[one].id + "'/>      <div style='width:6vw;float: left;' id='count" + jsonData[one].id + "'>0</div>  <img src='static/img/minus.png' style='height:2.5vh;;float:left'id='minus" + jsonData[one].id + "' /> </div>   </div>"));
+        td.append($(( "</td>")));
+
+        td1.appendTo(tr);
+        td.appendTo(tr);
+        tr.appendTo(tbody);
+
+
+    }
+    //tbody.appendTo(table);
+    ( $("#goodlist")).append(tbody);
+    for (one in jsonData) {
+        $("#minus" + jsonData[one].id).click(function () {
+            plus_total(this.id.substr(this.id.length - 1, 1), -1);
+        });
+        $("#plus" + jsonData[one].id).click(function () {
+            plus_total(this.id.substr(this.id.length - 1, 1), 1);
+        });
+    }
+}
+
+function plus_total(index, type, if_reset) {
     var id = "#count" + index;
-    if(if_reset){
+    if (if_reset) {
         $(id).text(0);
-    }else{
+        $("#total").text(0);
+        $("#postage").text(0);
+        $("#cost").text(0);
+
+    } else {
         var original = parseInt($("#count" + index).text());
         var total = original + type;
         if (total < 0)
@@ -127,6 +161,9 @@ function getAddress() {
 }
 
 function getTotalCost() {
+    total=0;
+    weight=0;
+    postFee=0;
 
     for (one in jsonData) {
         var count = getValue("count" + jsonData[one].id);
@@ -136,7 +173,12 @@ function getTotalCost() {
     }
 
     if (weight > postage_cost.heavy) {
-        postFee += postage_cost.afterWightPrice;
+
+        var after_count=parseInt((weight-postage_cost.heavy) / postage_cost.afterWight);
+        postFee += postage_cost.afterWightPrice * after_count+postage_cost.price;
+        console.info(postFee+"      after_count "+after_count);
+        if(after_count==0)
+            postFee+=  postage_cost.afterWightPrice+ postage_cost.price;
     } else if (weight > 0) {
         postFee += postage_cost.price;
     }
@@ -200,40 +242,61 @@ function creat_dialog() {
 
 function order() {
     $("#myModal").modal('hide');
-
-    var post_data = {
-        "cid": "data.cid",
-        "token": "data.token",
-        "data": {
-            "data": {
-                "amount": total + postFee,
-                "postage": postFee,
-                "description": "描述",
-                "adress": getAddress(),
-                "goodList": goodlist
+    var cookie = common.getCookieData();
+    cookie=JSON.parse(cookie);
+    var post_data = {     cid: cookie.cid,        token: cookie.token, data: {     data: {      amount: total + postFee,
+                postage: postFee,
+                description:$("#conment").val(),
+                adress: getAddress(),
+                goodList: goodlist
             }
         }
-    }
-
+    };
     reset();
+    alert(typeof (cookie));
+    alert(cookie);
+    alert(JSON.stringify(post_data));
+    $.ajax({
+        type: "POST",
+        //url: "url",
+        url:"/eysystem/CreatOrder",
+
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(post_data),
+        dataType: "json",
+        success:function(data){
+            if(data.code==200){
+
+            }
+        },
+        error: function (xhr, status, error) {
+            console.info(status + xhr + error);
+
+        }
+    })
 
 }
 
 
-function reset(){
-     total = 0;
-     weight = 0;
-     postFee = 0;
-     order_string = "";
+function reset() {
+    total = 0;
+    weight = 0;
+    postFee = 0;
+    order_string = "";
 
-     goodlist = [];
+    goodlist = [];
 
     for (one in jsonData) {
-            plus_total(jsonData[one].id, -1,true);
-    };
+        plus_total(jsonData[one].id, -1, true);
+        //if(jsonData[0].count){
+        //    jsonData[0].count=0;
+        //}
+    } ;
     $("#distination").val("");
     $("#name").val("");
     $("#phone").val("");
+$("#conment").val("");
+    getTotalCost();
 }
 
 //{"code":200,"data":[{"expressType":"??","afterWight":500,"afterWightPrice":80,"heavy":500,"price":80}]}

@@ -84,10 +84,10 @@ function ok(str){
         //storage["username"]=str.data.username;
         //storage["token"]=str.token;
         //storage["cid"]=str.data.cid;
-        common.setCookie("ff","ddd","ggg",30);
+        common.setCookie(str.data.username,str.token,str.data.cid,30);
 
         setTimeout(function(){
-            location.href ="personal.html"
+            location.href ="mainpage.html"
         },2000);
     }
 }
@@ -110,6 +110,7 @@ common.setCookie = function( username,token, cid,expiresNum) {
         'expires': expiresNum || 30 //cookie的过期时间，如没有传值默认30天过期
     };
     $.cookie(LOGINDATA, str);
+    alert(JSON.stringify(common.getCookie));
 
 
 }
@@ -119,7 +120,7 @@ common.getCookie = function() {
 }
 
 common.getCookieData = function() {
-    return  JSON.parse($.cookie('LOGINDATA'));
+    return  JSON.parse($.cookie('logindata'));
 }
 
 
