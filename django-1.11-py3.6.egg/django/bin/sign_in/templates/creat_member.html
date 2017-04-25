@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap 模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <!--python manage.py collectstatic-->
+    <!--python manage.py makemigrations sign_in-->
+    <!--python manage.py sqlmigrate sign_in 0001-->
+    <!--http://bootswatch.com/united/#forms-->
+    <link href="static/css/bootstrap.min.united.css" rel="stylesheet">
+    <link href="static/css/config.css" rel="stylesheet">
+    <link href="static/css/sign.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/jquery.cookie.js"></script>
+    <script src="static/js/creat_member.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="static/js/bootstrap.min.js"></script>
+</head>
+<body class="text-center">
+<div class="container col-xs-12" style="padding-top:15px ">
+    <div class="row " style="margin: 0px;padding: 0px">
+        <div class="col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    添加代理
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group text-left" id="name_">
+                            <label>用户名</label>
+                            <input class="form-control" type="text" id="name">
+                            <p class="help-block">代理用户名，创建后不可修改.</p>
+                        </div>
+                        <div class="form-group text-left">
+                            <label>密码</label>
+                            <input class="form-control" type="text" id="pswfirst">
+                            <p class="text-danger">请在此输入密码.</p>
+                        </div>
+                        <div class="form-group text-left" id="error_">
+                            <input class="form-control" type="text" id="pswconfirm">
+                            <p class="text-danger">请确认密码.</p>
+                        </div>
+
+
+                        <div class="form-group text-left" id="ali_">
+                            <label>支付宝账号</label>
+                            <input class="form-control" type="text" id="ali">
+                            <p class="help-block">在此输入支付宝账号.</p>
+                        </div>
+                        <div class="form-group text-left" id="phone_">
+                            <label>电话</label>
+                            <input class="form-control" type="text" id="phone">
+                            <p class="help-block">在此输入电话.</p>
+                        </div>
+                        <div class="form-group text-left" id="realname_">
+                            <label>姓名</label>
+                            <input class="form-control" type="text" id="realname">
+                            <p class="help-block">代理姓名，创建后无法修改</p>
+                        </div>
+                        <div class="form-group text-left" id="identi_">
+                            <label>身份证</label>
+                            <input class="form-control" type="text" id="identi">
+                            <p class="help-block">该代理身份证号码，创建后无法修改.</p>
+                        </div>
+                        <input class="btn btn-group-justified  btn-primary" value="提交" onclick="clickbtn()"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

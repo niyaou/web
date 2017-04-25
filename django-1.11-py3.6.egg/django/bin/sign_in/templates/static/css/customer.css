@@ -1,0 +1,56 @@
+body {
+    background:url(../img/timg.jpg) #f8f6e9;
+    width:100%;
+    height:100%
+}
+/*web background*/
+.container{
+    display:table;
+    height:100%;
+}
+/*dffdsa*/
+.row{
+    display: table-cell;
+    vertical-align: middle;
+}
+/* centered columns styles */
+
+
+.vertical-center{
+    justify-content:center;
+ align-items:center;
+ display:-webkit-flex;
+}
+
+.filled-div{
+    height:100%;
+    width:100%
+}
+
+.top-area{
+    margin-top: 10vh;
+    height:10vh
+}
+
+.zone1{
+    height: 100%;
+    text-align: center;
+    background:#e95420 ;
+}
+
+.zone2{
+    height: 100%;
+    background:#e95420 ;
+}
+.zone3{
+    height: 100%;
+    background:#e95420 ;
+}
+.zone4{
+    height: 100%;
+    background:#e95420 ;
+}.zone5{
+     height: 100%;
+     background:#e95420 ;
+ }
+

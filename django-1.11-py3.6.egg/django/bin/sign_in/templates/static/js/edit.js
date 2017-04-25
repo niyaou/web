@@ -1,13 +1,30 @@
 /**
  * Created by niyaou on 2017/4/14.
  */
-
+var isDisplay=true;
 var common={
     setCookie:null,getCookie:null,getCookieData:null
 };
+
+function setEditType(type){
+    if(type){
+        $("#psw").removeClass("hidden");
+        $("#btn").val("提交");
+        isDisplay=false;
+    }else{
+        $("#psw").addClass("hidden");
+        $("#btn").val("提交");
+    }
+}
+
 // 登录验证
 function clickbtn(){
-    console.info('fdsa');
+
+    if(isDisplay){
+        setEditType(true);
+        return;
+    }
+
     // 做表单输入校验
     var oldpsw = $("#oldpsw");
     var pswfirst = $("#pswfirst");

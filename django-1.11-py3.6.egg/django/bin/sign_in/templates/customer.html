@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap 模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/jquery.cookie.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="static/js/bootstrap.min.js"></script>
+    <link href="static/css/customer.css" rel="stylesheet">
+    <script src="static/js/customer.js"></script>
+</head>
+<body class="text-center">
+<!-- 按钮触发模态框 -->
+<!-- 模态框（Modal） -->
+
+<nav class="navbar navbar-default navbar-fixed-bottom vertical-center">
+    <div class="container col-xs-12">
+        <div class="row clearfix ">
+            <div class="col-xs-4 ">
+                <input type="button" class="btn btn-default" id="main_section"  onclick="window.location.href='mainpage.html'" value="首页" />
+            </div>
+            <div class="col-xs-4 ">
+                <input type="button" class="btn btn-default" id="booking"  value="下单" />
+            </div>
+            <div class="col-xs-4 ">
+                <input type="button" class="btn btn-default" id="personal_opt"  onclick="window.location.href='customer.html'" value="我的" />
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container col-xs-12">
+    <div class="row top-area vertical-center " >
+        <div class="col-xs-4  zone1 "  onclick="window.location.href='personal.html'">
+            <div class="filled-div">
+               <img src="static/img/customer.png" style="width: 10vw"/>
+                <div  style="color:#FFF">个人信息</div>
+            </div>
+        </div>
+        <div class="col-xs-4 col-xs-offset-1 zone1 "  onclick="window.location.href='subordinate.html'">
+            <div class="filled-div">
+                <img src="static/img/teammember.png" style="width: 10vw"/>
+                <div style="color:#FFF">团队信息</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

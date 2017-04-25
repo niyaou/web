@@ -20,8 +20,8 @@
     <script src="static/js/bootstrap.min.js"></script>
 </head>
 <body  class="text-center ">
-<div class="container col-xs-12 clearfix logindev">
-<div class="row">
+<div class="container col-xs-12 clearfix " style="margin-top: 15px">
+<div class="row" >
     <div class=" col-xs-12 col-md-8 ">
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -34,36 +34,43 @@
                         <input class="form-control" type="text" disabled>
                         <p class="help-block">当前代理用户名，不可修改.</p>
                     </div>
-                    <div class="form-group text-left">
+                    <div id="psw" class="hidden">
+                    <div class="form-group text-left " >
                         <label>原始密码</label>
-                        <input class="form-control" type="text" id="oldpsw">
+                        <input class="form-control" type="text" id="oldpsw" >
                         <p class="text-danger">请在此密码.</p>
                     </div>
-                    <div class="form-group text-left">
+                    <div class="form-group text-left " >
                         <label>密码</label>
                         <input class="form-control" type="text" id="pswfirst">
                         <p class="text-danger">请在此输入新密码.</p>
                     </div>
-                    <div class="form-group text-left">
+                    <div class="form-group text-left " >
                         <input class="form-control" type="text" id="pswconfirm">
                         <p class="text-danger">请确认新密码.</p>
                     </div>
+                    </div>
                     <div class="form-group text-left">
                         <label>支付宝账号</label>
-                        <input class="form-control" type="text" id="ali">
+                        <input class="form-control " type="text" id="ali" disabled="disabled">
                         <p class="help-block">可在此更改支付宝账号.</p>
                     </div>
                     <div class="form-group text-left">
                         <label>电话</label>
-                        <input class="form-control" type="text" id="phone">
+                        <input class="form-control disabled" type="text" id="phone" disabled="disabled">
                         <p class="help-block">可在此更改电话.</p>
                     </div>
-                    <div class="form-group text-left">
+                    <div class="form-group text-left" id="realname_">
+                        <label>姓名</label>
+                        <input class="form-control" type="text" id="realname" disabled>
+                        <p class="help-block">代理姓名，创建后无法修改</p>
+                    </div>
+                    <div class="form-group text-left" >
                         <label>身份证</label>
                         <input class="form-control" type="text" disabled>
                         <p class="help-block">不可更改.</p>
                     </div>
-                    <input  class="btn btn-group-justified  btn-primary" value="提交" onclick="clickbtn()"/>
+                    <input  class="btn btn-group-justified  btn-primary" value="编辑" onclick="clickbtn()" id="btn"/>
                 </form>
         </div>
     </div>
