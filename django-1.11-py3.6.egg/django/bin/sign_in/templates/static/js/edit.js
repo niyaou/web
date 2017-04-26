@@ -5,15 +5,74 @@ var isDisplay=true;
 var common={
     setCookie:null,getCookie:null,getCookieData:null
 };
+var person= {
+    "cid": 4,
+    "aliAccount": "test",
+    "authority": 1,
+    "password": "123456",
+    "phone": "55555",
+    "realname": "白百合",
+    "registertime": "Apr 12, 2017 1:07:36 PM",
+    "superior": 1,
+    "username": "xsong233",
+    "status": 1,
+
+}
+
+$(document).ready(function () {
+    async_userInfo();
+});
+function fill_info(data){
+    $("#username").val(data.username);
+    $("#ali").val(data.aliAccount);
+    $("#phone").val(data.phone);
+    $("#realname").val(data.realname);
+    $("#identi").val(data.registertime);
+}
+function async_userInfo(){
+    var data = common.getCookieData();
+    $.ajax({
+        type: "POST",
+        //url:"url",
+        url: "/eysystem/GetUserInfo",
+
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            cid: 'data.cid',
+            token:'data.token',
+            data:{
+                cid:'cid'
+            }
+        }),
+        dataType: "json",
+        success: function (data) {
+            fill_info(data.data);
+        },complete:function(){
+            fill_info(person);
+        },
+        error: function (xhr, status, error) {
+            console.info(status + xhr + error);
+            //alert(error);
+        }
+    })
+}
+
+
 
 function setEditType(type){
     if(type){
         $("#psw").removeClass("hidden");
         $("#btn").val("提交");
+        $("#ali").attr('disabled',false);
+        $("#phone").attr('disabled',false);
+        $("#realname").attr('disabled',false);
         isDisplay=false;
     }else{
         $("#psw").addClass("hidden");
         $("#btn").val("提交");
+        $("#ali").attr('disabled',true);
+        $("#phone").attr('disabled',true);
+        $("#realname").attr('disabled',true);
     }
 }
 
@@ -43,7 +102,7 @@ function clickbtn(){
     alert($.cookie(LOGINDATA));
 
     //var a=  {username:storage["username"],cid:storage["cid"],token:storage["token"],data:{username:storage["username"],aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
-    var a=  {username:data.username,cid:data.cid,token:data.token,data:{username:data.username,aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
+    //var a=  {username:data.username,cid:data.cid,token:data.token,data:{username:data.username,aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
 
     // 发送登录的异步请求
     //$.ajax({
@@ -78,13 +137,13 @@ function clickbtn(){
         type: "POST",
         url:"/eysystem/ModifyPhone",
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(a),
+        data: JSON.stringify('a'),
         dataType: "json",success:
             function(data){
                 console.info(data);
                 ok(data);
             },  complete: function(XMLHttpRequest, textStatus) {
-            console.info(textStatus)
+            ok();
         }})
 }
 
@@ -120,8 +179,8 @@ function clickbtn(){
 
 
 function ok(str){
+    setEditType(false);
     if(str.code=='200'){
-        alert('dome')
     }
 }
 

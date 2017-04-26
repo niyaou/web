@@ -21,7 +21,6 @@ function async_text() {
     //    ,"myAchievement_d":0,"myGroupAchievement_all":1517331489,"myGroupAchievement_m"
     //:264110,"myGroupAchievement_d":0}}
     var data = common.getCookieData();
-    alert(data);
 
 
     $.ajax({
