@@ -45,11 +45,11 @@ function clickbtn() {
         creat_dialog_empty(identify.attr('id'));
         return
     }
-    var data = common.getCookieData();
+    var data = JSON.parse(common.getCookieData());
 
     var a = {
-        cid: "data.cid",
-        token: "data.token",
+        cid: data.cid,
+        token: data.token,
         data: {
             "aliAccount": ali.val(), "password": pswfirst.val(), "username": username.val(),
             "identityid": identify.val(), realname: realname.val(),  phone: phone.val()
@@ -62,10 +62,11 @@ function clickbtn() {
         type: "POST",
         url: "/eysystem/Register",
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify('a'),
+        data: JSON.stringify(a),
         dataType: "json", success: function (data) {
             console.info(data);
             ok(data);
+
         }, complete: function (XMLHttpRequest, textStatus) {
             console.info(textStatus)
         }

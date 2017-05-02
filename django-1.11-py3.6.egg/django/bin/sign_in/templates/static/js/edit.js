@@ -16,7 +16,6 @@ var person= {
     "superior": 1,
     "username": "xsong233",
     "status": 1,
-
 }
 
 $(document).ready(function () {
@@ -38,10 +37,10 @@ function async_userInfo(){
 
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-            cid: 'data.cid',
-            token:'data.token',
+            cid: data.cid,
+            token:data.token,
             data:{
-                cid:'cid'
+                cid:cid
             }
         }),
         dataType: "json",
@@ -102,7 +101,7 @@ function clickbtn(){
     alert($.cookie(LOGINDATA));
 
     //var a=  {username:storage["username"],cid:storage["cid"],token:storage["token"],data:{username:storage["username"],aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
-    //var a=  {username:data.username,cid:data.cid,token:data.token,data:{username:data.username,aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
+    var a=  {username:data.username,cid:data.cid,token:data.token,data:{username:data.username,aliAccount:ali.val(),password:oldpsw.val(),phone:phone.val()}};
 
     // 发送登录的异步请求
     //$.ajax({
@@ -137,7 +136,7 @@ function clickbtn(){
         type: "POST",
         url:"/eysystem/ModifyPhone",
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify('a'),
+        data: JSON.stringify(a),
         dataType: "json",success:
             function(data){
                 console.info(data);

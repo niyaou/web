@@ -47,8 +47,8 @@ $(document).ready(function () {
 
 
 function async_table(cid) {
-    //var data = JSON.parse(common.getCookieData());
-    var current_cid = "data.cid";
+    var data = JSON.parse(common.getCookieData());
+    var current_cid = data.cid;
     if (cid)
         current_cid = cid;
 
@@ -57,12 +57,12 @@ function async_table(cid) {
     $.ajax({
         type: "POST",
         //url: "url",
-        url: "/eysystem/GetStaff",
+        url: "/eysystem/GetGoodList",
 
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-            cid: "data.cid",
-            token: "data.token",
+            cid: data.cid,
+            token: data.token,
             data: {
                 cid: current_cid
             }
@@ -70,12 +70,15 @@ function async_table(cid) {
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
+                //alert(JSON.stringify(data));
                 jsonData = data.data;
                 add_table();
+                //setedit(current_id,false);
+                //$("#myModal").modal('hide');
 
             }
         }, complete: function () {
-            add_table();
+            //add_table();
 
         },
         error: function (xhr, status, error) {
@@ -126,33 +129,82 @@ function showToggle(cid) {
     if (displaying_cid != cid) {
         return;
     }
-   current_data=  creat_dialog(cid);
+    current_data=  creat_dialog(cid);
     current_id=cid;
 }
 
+
+
+function add_good(){
+    var tbody = $("<tbody></tbody> ");
+
+        var tr = $("<tr></tr> ");
+        var tid = $('  <td class="col-xs-1">' + (0) + '</td>');
+        tid.appendTo(tr);
+        var td1 = $('<td class="col-xs-10" >  <div class="panel-default col-xs-12 clearpadding">  <a style="color:#696969" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo' + 0 + '" id="toggles' + 0 + '" > <div class="col-xs-2 clearpadding ">品名 </div>    <div class="col-xs-5 clearpadding"> <input  id="name' + 0 + '" type="text" class=" col-xs-8 back-control" value="' + 0 + '"  /> </div>  <div class="col-xs-offset-1 col-xs-2 clearpadding">价格</div> <div class="col-xs-2 clearpadding"><input id="price' + 0 + '" value="' + 0 + '" type="text" class=" back-control col-xs-12 " /> </div></a></div>  ');
+
+        td1.append($(( "<div id='collapseTwo" + 0 + "'class='col-xs-12 panel-collapse collapse clearpadding' style='padding-top: 5px'>     <div class=' text-left col-xs-12 clearpadding'>    <div class='col-xs-2 clearpadding'> 重量</div>  <div class='col-xs-4 clearpadding'><input id='weight" + 0 + "' value='" + 0 + "' type='text' class=' back-control col-xs-8 ' /></div>      <div class='col-xs-12 clearpadding'>         <div class='col-xs-12 clearpadding'style='padding-top: 5px'>详情</div> <textarea id='description" +0 + "'   class=' back-control col-xs-10 ' rows='3' >" + - + "</textarea></div>                          </div>                 </div></div> </td>")));
+        td1.appendTo(tr);
+
+        var td = $(( " <td>  <div >      <img src='" + save_icon + "' style='height:2.5vh;' id='primar" +0 + "'/>      </div>"));
+        td.append($(( "</td>")));
+        td.appendTo(tr);
+
+        td = $(( " <td>  <div  >      <img src='" + icon_url + "' style='height:2.5vh;' id='minus" +0 + "'/>      </div>"));
+        td.append($(( "</td>")));
+
+        td.appendTo(tr);
+        tr.appendTo(tbody);
+
+     $(table_id).append(tbody);
+
+         displaying_cid=0;
+
+
+    $("#minus" + 0).click(function () {
+        editGoods(this.id.replace(/[^0-9]/ig, ""));
+    });
+
+
+        $("#primar" +0).click(function () {
+
+            showToggle(this.id.replace(/[^0-9]/ig, ""));
+        });
+}
+
 function saveGoods() {
-    var current_cid = "data.cid";
+    icon_url = minus_url;
+    save_icon = save_invalid;
+
+    post_url="EditGoods";
+    if(displaying_cid==0)
+        post_url="AddGoods";
+
+    var data = JSON.parse(common.getCookieData());
 
     $.ajax({
         type: "POST",
         //url: "url",
-        url: "/eysystem/InvalidUser",
+        url: "/eysystem/"+post_url,
 
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-            cid: "data.cid",
-            token: "data.token",
-            data:current_data
+            cid: data.cid,
+            token: data.token,
+            data:{data:current_data}
         }),
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
+                //alert(JSON.stringify(data));
                 jsonData = data.data;
                 add_table();
+                setedit(current_id,false);
+                $("#myModal").modal('hide');
             }
         }, complete: function () {
-            setedit(current_id,false);
-            $("#myModal").modal('hide');
+            //setedit(current_id,false);
+            //$("#myModal").modal('hide');
             //add_table();
         },
         error: function (xhr, status, error) {

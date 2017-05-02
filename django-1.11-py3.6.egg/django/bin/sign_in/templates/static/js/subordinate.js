@@ -10,15 +10,17 @@ common.getCookieData = function () {
 };
 
 
-var displaying_cid = "data.cid";
+
 var order_string = "";
 var minus_url="menber_minus.png";
 var minus_invalid="minus_invalid.png";
 var icon_url="";
 var data = common.getCookieData();
-var team_member = [ "data.cid"];
+var displaying_cid = data.cid;
+var team_member = [ data.cid];
 var table_id = "#team_menber";
 var postage_cost = {"expressType": "??", "afterWight": 500, "afterWightPrice": 80, "heavy": 500, "price": 50};
+var temp=null;
 var jsonData = [{
     "cid": 1,
     "aliAccount": "test",
@@ -90,7 +92,7 @@ $(document).ready(function () {
 });
 
 function async_postage() {
-    var data = common.getCookieData();
+    var data =  JSON.parse(common.getCookieData());
     $.ajax({
         type: "POST",
         //url: "url",
@@ -115,8 +117,8 @@ function async_postage() {
 
 
 function async_table(cid) {
-    //var data = JSON.parse(common.getCookieData());
-    var current_cid = "data.cid";
+    var data = JSON.parse(common.getCookieData());
+    var current_cid = data.cid;
     if (cid)
         current_cid = cid;
 
@@ -129,8 +131,8 @@ function async_table(cid) {
 
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-            cid: "data.cid",
-            token: "data.token",
+            cid: data.cid,
+            token: data.token,
             data: {
                 cid: current_cid
             }
@@ -138,12 +140,13 @@ function async_table(cid) {
         dataType: "json",
         success: function (data) {
             if (data.code == 200) {
+                //alert(JSON.stringify(data));
                 jsonData = data.data;
                 add_table();
 
             }
         }, complete: function () {
-            add_table();
+            //add_table();
 
         },
         error: function (xhr, status, error) {
@@ -184,20 +187,23 @@ function add_table() {
 
     for (one in jsonData) {
         $("#minus" + jsonData[one].cid).click(function () {
+            //alert(this.id.replace(/[^0-9]/ig,""));
             removeInferior(this.id.replace(/[^0-9]/ig,""));
         });
-        $("#primar" + jsonData[one].cid).click(function () {
+        $("#primar" + jsonData[one].cid).bind('click',function () {
             getInFerior(this.id.replace(/[^0-9]/ig,""));
+
         });
     }
 }
 function removeInferior(cid) {
-    if(displaying_cid != "data.cid"){
+    var data = JSON.parse(common.getCookieData());
+    if(displaying_cid != data.cid){
         return;
     }
     $(table_id).empty();
-    jsonData.pop();
-    var current_cid = "data.cid";
+    //jsonData.pop();
+
 
     $.ajax({
         type: "POST",
@@ -206,20 +212,22 @@ function removeInferior(cid) {
 
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-            cid: "data.cid",
-            token: "data.token",
+            cid: data.cid,
+            token: data.token,
             data: {
-                cid: current_cid
+                cid: cid
             }
         }),
         dataType: "json",
         success: function (data) {
+            async_table();
             if (data.code == 200) {
                 jsonData = data.data;
-                add_table();
+                async_table();
+                //add_table();
             }
         }, complete: function () {
-            add_table();
+            //add_table();
         },
         error: function (xhr, status, error) {
             console.info(status + xhr + error);
@@ -229,15 +237,20 @@ function removeInferior(cid) {
 }
 
 function getInFerior(cid) {
+    temp=getData(cid).realname;
     $(table_id).empty();
     async_table(cid);
     team_member.push(cid);
 }
 
 function dealWithCid() {
-    if (displaying_cid != "data.cid") {
+    var datas = JSON.parse(common.getCookieData());
+    if (parseInt(displaying_cid) != parseInt(datas.cid)) {
+        console.info("displaying_cid"+displaying_cid+"   datas.cid"+datas.cid);
         $("#backtoupset").css("display", "block");
-        $("#name_").text(getData(displaying_cid).realname);
+        //alert(datas.cid);
+        //alert(JSON.stringify(getData(datas.cid)));
+        $("#name_").text(temp);
         return false;
     } else {
         $("#backtoupset").css("display", "none");
@@ -255,9 +268,10 @@ function backToUpSet(){
 
 
 function getData(cid) {
+
     for (one in jsonData) {
-        if (jsonData[one].cid == cid)
-            return jsonData[one]
+        if (parseInt(jsonData[one].cid) ==parseInt(cid))
+            return jsonData[one];
     }
 }
 
