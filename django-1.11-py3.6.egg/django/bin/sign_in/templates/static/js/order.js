@@ -14,7 +14,7 @@ var postFee = 0;
 var order_string = "";
 var data = common.getCookieData();
 var goodlist = [];
-var postage_cost = {"expressType": "??", "afterWight": 500, "afterWightPrice": 80, "heavy": 500, "price": 50};
+var postage_cost = {"expressType": "??", "afterWight": 500, "afterWightPrice": 50, "heavy": 500, "price": 50};
 var jsonData = [{"id": 1, "name": "牛肉", "price": 100, "status": 1, "weight": 250}, {
     "id": 2,
     "description": "好吃fda发货的沙发回去我答复哈斯卡",
@@ -33,8 +33,8 @@ var jsonData = [{"id": 1, "name": "牛肉", "price": 100, "status": 1, "weight":
 
 $(document).ready(function () {
 
-
-    async_table();
+    async_postage();
+    //async_table();
 
 });
 
@@ -50,10 +50,11 @@ function async_postage(){
             cid: data.cid,
             token:data.token
         }),
-        dataType: "JSON",
+        dataType: "json",
         success: function (data) {
             if(data.code==200){
                 postage_cost=data.data[0];
+                async_table();
             }
         },
         error: function (xhr, status, error) {
@@ -158,7 +159,7 @@ function getAddress() {
     if (!getValue("distination") || !getValue("name") || !getValue("phone")) {
         return null;
     }
-    var address = getValue("provence") + getValue("city") + getValue("zone") + getValue("distination") +
+    var address = getValue("provence")+"~~"+ + getValue("city")+"~~" + getValue("zone") +"~~"+ getValue("distination") +"~~"+
         "       姓名:" + getValue("name") + "    电话:" + getValue("phone");
     return address;
 }
@@ -180,7 +181,7 @@ function getTotalCost() {
         var after_count=parseInt((weight-postage_cost.heavy) / postage_cost.afterWight);
         postFee += postage_cost.afterWightPrice * after_count+postage_cost.price;
         console.info(postFee+"      after_count "+after_count);
-        if(after_count==0)
+        if(after_count==0||((weight-postage_cost.heavy) - postage_cost.afterWight*after_count >0 ))
             postFee+=  postage_cost.afterWightPrice;
     } else if (weight > 0) {
         postFee += postage_cost.price;
@@ -239,7 +240,7 @@ function creat_dialog() {
     $("#goodsdetail").text(order_string);
 
 
-    $("#address").text(getAddress());
+    $("#address").text(getAddress().replace(/~/g,"")  );
     $("#myModal").modal('show');
 }
 
@@ -256,9 +257,6 @@ function order() {
         }
     };
     reset();
-    alert(typeof (cookie));
-    alert(cookie);
-    alert(JSON.stringify(post_data));
     $.ajax({
         type: "POST",
         //url: "url",

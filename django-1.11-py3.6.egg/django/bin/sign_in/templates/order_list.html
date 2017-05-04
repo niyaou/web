@@ -17,6 +17,7 @@
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/jquery.dataTables.min.js"></script>
     <script src="static/js/order_list.js"></script>
+    <script src="static/js/excelutil.js"></script>
 </head>
 <body class="text-justify" style="height:100vh">
 
@@ -30,7 +31,7 @@
 
         </h4>
         <div class="col-xs-12">
-            <table class=" table  table-hover table-bordered" id="team_menber">
+            <table class=" table  table-hover table-bordered " id="team_menber">
                 <!--<tbody>-->
                 <!--<tr>-->
                     <!--<td class="col-xs-1">1</td>-->
@@ -174,14 +175,32 @@
                 <!--</tr>-->
                 <!--</tbody>-->
             </table>
-            <div class="row  text-right" style="margin-bottom: 3%" onclick="add_good()">
-                新品上架 <img src="static/img/addgoods.png" style="height:6vh ;margin-right: 5%"/>
+            <div id="explore">
+                <!--<ul class="pagination">-->
+                    <!--<li>-->
+                        <!--<a href="#" id="prev">Prev</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="#">1</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="#">2</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="#" id="next">Next</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            </div>
+
+            <div class="row  text-right" style="margin-bottom: 3%" onclick="method1('excel_table','name2')">
+                导出excel <img src="static/img/addgoods.png" style="height:6vh ;margin-right: 5%"/>
 
                 <!--<input  class="btn-primary btn" value="添加下线" onclick="window.location.href='creat_member.html'"/></div>-->
             </div>
 
         </div>
-
+        <table class=" table  table-hover table-bordered hidden" id="excel_table">
+            </table>
         <!-- Modal -->
         <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -194,7 +213,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" onclick="saveGoods()">上架</button>
+                        <button type="button" class="btn btn-primary" onclick="method1('team_menber')">上架</button>
                     </div>
                 </div>
             </div>

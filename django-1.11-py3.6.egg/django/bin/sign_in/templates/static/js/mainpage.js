@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by niyaou on 2017/4/19.
  */
 var common = {

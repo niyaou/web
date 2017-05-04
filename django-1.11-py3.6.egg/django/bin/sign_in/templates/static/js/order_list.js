@@ -8,21 +8,15 @@ var common = {
 common.getCookieData = function () {
     return ($.cookie('logindata'));
 };
-
-
+var total_page = 0;
+var pages = 1;
+var pageNum = 5;
 var displaying_cid = "";
-var order_string = "";
-var minus_url = "static/img/edit2.png";
-var save_url = "static/img/save.png";
 var minus_invalid = "static/img/edit_invalid2.png";
-var save_invalid = "static/img/save_invalid.png";
-var icon_url = "";
-var save_icon = "";
 var data = common.getCookieData();
-var current_data = null;
-var current_id = 0;
 var team_member = ["data.cid"];
 var table_id = "#team_menber";
+var excel_id = "#excel_table";
 var postage_cost = {"expressType": "??", "afterWight": 500, "afterWightPrice": 80, "heavy": 500, "price": 50};
 var jsonData = [{
     "cargosSet": [
@@ -52,6 +46,7 @@ var jsonData = [{
         }
     ],
     "id": 5,
+    "total": 141,
     "amount": 1080,
     "cargos": "null",
     "creatTime": "Apr 23, 2017 10:43:22 PM",
@@ -60,7 +55,7 @@ var jsonData = [{
     "description": "22",
     "postage": 240,
     "status": 0,
-    "adress": "北京市北京市市辖区东城区212       姓名:2    电话:22",
+    "adress": "北京市北~~京市市辖区~~东城区212  ~~ 反对反对32~~    姓名:2    电话:22",
     name: "张三",
     phone: "12131331213"
 },
@@ -84,6 +79,7 @@ var jsonData = [{
             }
         ],
         "id": 4,
+        "total": 141,
         "amount": 640,
         "cargos": "null",
         "creatTime": "Apr 23, 2017 10:36:02 PM",
@@ -92,7 +88,7 @@ var jsonData = [{
         "description": "22",
         "postage": 80,
         "status": -1,
-        "adress": "北京市北京市市辖区东城区11       姓名:2    电话:22",
+        "adress": "北京市北京~~市市~~辖区东城区11  ~~犯得上发生~~     姓名:2    电话:22",
         name: "张三",
         phone: "13565432113"
     },
@@ -109,6 +105,7 @@ var jsonData = [{
         ],
         "id": 3,
         "amount": 700,
+        "total": 141,
         "cargos": "null",
         "creatTime": "Apr 23, 2017 10:33:24 PM",
         "creatTimeInt": 0,
@@ -116,7 +113,7 @@ var jsonData = [{
         "description": "adfsdf",
         "postage": 160,
         "status": 1,
-        "adress": "北京市北京市市辖区东城区3       姓名:3    电话:2",
+        "adress": "北京市~~北京市市辖区~~东城区3~~   方式电话~~    姓名:3    电话:2",
         name: "张三",
         phone: "12131331213"
     }, {
@@ -147,6 +144,7 @@ var jsonData = [{
             }
         ],
         "id": 21,
+        "total": 141,
         "amount": 10560,
         "cargos": "null",
         "creatTime": "Apr 23, 2017 10:28:09 PM",
@@ -155,10 +153,10 @@ var jsonData = [{
         "description": "发生的故事的",
         "postage": 2480,
         "status": 0,
-        "adress": "北京市北京市市辖区东城区电放费       姓名:订单    电话:312312",
+        "adress": "北京市~~北京市市辖区~~东城区~~电放费    ~~   姓名:订单    电话:312312",
         name: "张22",
         phone: "12131331213"
-    },    {
+    }, {
         "cargosSet": [
             {
                 "id": 10062,
@@ -180,16 +178,17 @@ var jsonData = [{
         "id": 11,
         "amount": 270,
         "cargos": "null",
+        "total": 141,
         "creatTime": "Apr 23, 2017 10:26:04 PM",
         "creatTimeInt": 0,
         "creator": 25,
         "description": "33",
         "postage": 80,
         "status": 1,
-        "adress": "北京市北京市市辖区东城区33       姓名:33    电话:33",
+        "adress": "北京市~~北京市市辖区~~东城区33 ~~与计划发给~~      姓名:33    电话:33",
         name: "张11",
         phone: "12131331213"
-    },   {
+    }, {
         "cargosSet": [
             {
                 "id": 10062,
@@ -211,16 +210,17 @@ var jsonData = [{
         "id": 311,
         "amount": 270,
         "cargos": "null",
+        "total": 141,
         "creatTime": "Apr 23, 2017 10:26:04 PM",
         "creatTimeInt": 0,
         "creator": 25,
         "description": "33",
         "postage": 80,
         "status": 1,
-        "adress": "北京市北京市市辖区东城区33       姓名:33    电话:33",
-       "name": "张11",
+        "adress": "北京市~~北京市市辖区~~东城区33  ~~法国德国和健康~~     姓名:33    电话:33",
+        "name": "张11",
         "phone": "12131331213"
-    },{
+    }, {
         "cargosSet": [
             {
                 "id": 10070,
@@ -250,13 +250,14 @@ var jsonData = [{
         "id": 125,
         "amount": 1080,
         "cargos": "null",
+        "total": 141,
         "creatTime": "Apr 23, 2017 10:43:22 PM",
         "creatTimeInt": 0,
         "creator": 25,
         "description": "22",
         "postage": 240,
         "status": 0,
-        "adress": "北京市北京市市辖区东城区212       姓名:2    电话:22",
+        "adress": "北京市~~北京市~~市辖区~~东城区212  ~~     姓名:2    电话:22",
         "name": "张三",
         "phone": "12131331213"
     },];
@@ -290,13 +291,15 @@ function async_table(cid) {
     $.ajax({
         type: "POST",
         //url: "url",
-        url: "/eysystem/GetGoodList",
+        url: "/eysystem/GetOders",
 
         contentType: "application/json; charset=utf-8",
         //data: JSON.stringify({
         //    cid: data.cid,
         //    token: data.token,
         //    data: {
+        //        page:1,
+        //        pageNum:50,
         //        cid: current_cid
         //    }
         //}),
@@ -311,7 +314,9 @@ function async_table(cid) {
 
             }
         }, complete: function () {
+            add_table1();
             add_table();
+            add_explore(pages)
 
         },
         error: function (xhr, status, error) {
@@ -322,8 +327,8 @@ function async_table(cid) {
 
 
 function add_table() {
-    jsonData.sort(function(a,b){
-        return b.status- a.status;
+    jsonData.sort(function (a, b) {
+        return b.status - a.status;
     })
     var tbody = $("<tbody></tbody> ");
     for (var one in jsonData) {
@@ -336,15 +341,15 @@ function add_table() {
         "   <div class='col-xs-2 clearpadding'>邮费</div>" +
         " <div class='col-xs-4 clearpadding' id='postage" + jsonData[one].id + "'>20</div>" +
         "  <div class='col-xs-2 clearpadding'> 地址</div>" +
-        "  <div class='col-xs-12 clearpadding' id='address" + jsonData[one].id + "'>北京市北京市市辖区东城区212</div>" +
+        "  <div class='col-xs-12 clearpadding' id='address" + jsonData[one].id + "'>" + jsonData[one].adress.replace(/~/g, "") + "</div>" +
         "  <div class='col-xs-12 clearpadding'> 详情</div>" +
         " <div class='col-xs-12 clearpadding' id='detail" + jsonData[one].id + "'>" + getDetail(jsonData[one].cargosSet) + "</div>" +
         "  </div> </div></td>")));
 
         td1.appendTo(tr);
-        console.info("one:"+one+" status :"+jsonData[one].id);
+        console.info("one:" + one + " status :" + jsonData[one].id);
         var td = $(( " <td>      <div class='label'  id='status" + jsonData[one].id + "'>  </div>"));
-        td.append($( "</td>"));
+        td.append($("</td>"));
         td.appendTo(tr);
 
         td.appendTo(tr);
@@ -353,18 +358,115 @@ function add_table() {
     ( $(table_id)).append(tbody);
 
 
-
     for (one in jsonData) {
         getStatus(jsonData[one].id);
     }
 }
 
+function add_table1() {
 
+    var tbody = $("<tbody></tbody> ");
+    var tr1 = $("<tr></tr>");
+    var tid1 = $('  <td class="col-xs-1">' + '编号' + '</td>');
+
+    var td11 = $('<td> 姓名 </td><td> 电话 </td> <td> 收件省份 </td><td>收件城市 </td><td>收件区县</td><td>收件人详细地址</td><td> 内容</td>');
+    tid1.appendTo(tr1);
+    td11.appendTo(tr1);
+    tr1.appendTo(tbody);
+
+    for (var one in jsonData) {
+        var tr = $("<tr></tr> ");
+        var tid = $('  <td class="col-xs-1">' + (parseInt(one) + 1) + '</td>' +
+            '<td  id="name' + jsonData[one].id + '"> ' + jsonData[one].name + ' </td> ' +
+            ' <td  id="phone' + jsonData[one].id + '">' + jsonData[one].phone + ' </td> ' +
+            "  <td >" + jsonData[one].adress.split("~~")[0] + "</td>" +
+            "  <td >" + jsonData[one].adress.split("~~")[1] + "</td>" +
+            "  <td >" + jsonData[one].adress.split("~~")[2] + "</td>" +
+            "  <td >" + jsonData[one].adress.split("~~")[3] + "</td>" +
+            "  <td  id='detail" + jsonData[one].id + "'>" + getDetail(jsonData[one].cargosSet) + "</td>");
+        tid.appendTo(tr);
+        tr.appendTo(tbody);
+    }
+    ( $(excel_id)).append(tbody);
+    for (one in jsonData) {
+        getStatus(jsonData[one].id);
+    }
+}
+
+function add_explore(count) {
+
+    var tbody = $("#explore");
+    var tr = $("<ul class='pagination' style='font-size: 0.4rem' ></ul>");
+    var t1 = $("<li></li> ");
+    var tid = $(' <a onclick="refresh_explore(-1)" class="padding_clear" id="prev">Prev</a><a onclick="refresh_explore(1)" id="1">1</a>');
+
+
+    tid.appendTo(t1);
+    t1.appendTo(tr);
+
+
+    total_page = parseInt(jsonData[0].total / pageNum);
+    if ((jsonData[0].total / pageNum - total_page) > 0) {
+        total_page += 1;
+    }
+    var first_dot = false;
+    for (var i = count; i <= total_page; i++) {
+        if (i == 1 || i == total_page) {
+            continue;
+        } else if ((i - count) > 2) {
+            var ts = $("<li></li> ");
+            var tis = $('<a >..</a><a onclick="refresh_explore(' + (total_page - 1) + ')" id="' + (total_page - 1) + '">' + (total_page - 1) + '</a>');
+            tis.appendTo(ts);
+            tr.append(ts);
+            break;
+        } else if (i - 1 > 1) {
+            var ts = $("<li></li> ");
+            if (!first_dot) {
+                first_dot = true;
+                var dot = $('<a >..</a>');
+                dot.appendTo(ts);
+            }
+            var tis = $('<a onclick="refresh_explore(' + i + ')" id="' + i + '">' + i + '</a>');
+            tis.appendTo(ts);
+            tr.append(ts);
+        } else {
+            var ts = $("<li></li> ");
+            var tis = $(' <a onclick="refresh_explore(' + i + ')" id="' + i + '">' + i + '</a>');
+            tis.appendTo(ts);
+            tr.append(ts);
+        }
+    }
+    var tr1 = $("<li></li> ");
+    if (total_page > 1) {
+        var temp = $(' <a onclick="refresh_explore(' + total_page + ')" id="' + total_page + '">' + total_page + '</a>')
+        temp.appendTo(tr1);
+    }
+    var tid1 = $('<a onclick="refresh_explore(0)" id="next">Next</a>');
+    tid1.appendTo(tr1);
+    tr1.appendTo(tr);
+    tr.appendTo(tbody);
+
+
+    //var id="#"+1;
+    //console.info(id);
+    //$(id).click(function(){
+    //    alert(id);
+    //})
+}
+
+
+function refresh_explore(count) {
+    pages = count;
+    $("#explore").empty();
+    alert(count + "   " + pages);
+    add_explore(count);
+
+}
 
 
 function getDetail(data) {
     var str = null;
-    for (one in data) {
+    for (var one in data) {
         str += data[one].name + "&nbsp;" + data[one].num + "袋" + "&nbsp;&nbsp;&nbsp;"
     }
     return str;
@@ -372,11 +474,11 @@ function getDetail(data) {
 
 function getStatus(id) {
     var str = "#status" + id;
-    for (one in jsonData) {
+    for (var one in jsonData) {
 
         if (jsonData[one].id == id) {
 
-            console.info("one:"+one+"    "+jsonData[one].id + "    " + jsonData[one].status + "   id:" + str+"   attr:"+id);
+            console.info("one:" + one + "    " + jsonData[one].id + "    " + jsonData[one].status + "   id:" + str + "   attr:" + id);
             switch (jsonData[one].status) {
                 case 0:
                     $(str).text("未付");
