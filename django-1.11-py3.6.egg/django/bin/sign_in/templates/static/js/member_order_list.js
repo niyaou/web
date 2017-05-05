@@ -13,7 +13,9 @@ var pages = 1;
 var pageNum =10;
 var displaying_cid = "";
 var minus_invalid = "static/img/edit_invalid2.png";
-var data = common.getCookieData();
+var data = 'JSON.parse(common.getCookieData())';
+var current_cid='data.current_cid';
+var current_name='data.current_name';
 var team_member = ["data.cid"];
 var table_id = "#team_menber";
 var excel_id = "#excel_table";
@@ -264,6 +266,7 @@ var jsonData = [{
 
 
 $(document).ready(function () {
+    $("#name_").text(current_name);
     async_table();
 });
 
@@ -571,7 +574,7 @@ function cancel_order(){
     $.ajax({
         type: "POST",
         //url: "url",
-        url: "/eysystem/DeleteOder",
+        url: "/eysystem/SetPaidOder",
 
         contentType: "application/json; charset=utf-8",
         //data: JSON.stringify({

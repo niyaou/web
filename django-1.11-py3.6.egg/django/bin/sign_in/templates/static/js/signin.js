@@ -84,7 +84,7 @@ function ok(str){
         //storage["username"]=str.data.username;
         //storage["token"]=str.token;
         //storage["cid"]=str.data.cid;
-        common.setCookie(str.data.username,str.token,str.data.cid,30);
+        common.setCookie(str.data.username,str.token,str.data.cid,data.realname,30);
 
         setTimeout(function(){
             location.href ="mainpage.html"
@@ -99,8 +99,8 @@ var LOGINDATA="logindata";
 var common={
     setCookie:null,getCookie:null,getCookieData:null
 };
-common.setCookie = function( username,token, cid,expiresNum) {
-    var cookieValue={username:username,token:token,cid:cid
+common.setCookie = function( username,token, cid,realname,expiresNum) {
+    var cookieValue={username:username,token:token,cid:cid,current_cid:"",current_name:realname
     };
     var str = JSON.stringify(cookieValue);
     var options = {

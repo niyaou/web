@@ -16,7 +16,7 @@
     <!-- 包括所有已编译的插件 -->
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/jquery.dataTables.min.js"></script>
-    <script src="static/js/order_list.js"></script>
+    <script src="static/js/member_order_list.js"></script>
     <script src="static/js/excelutil.js"></script>
 </head>
 <body class="text-justify" style="height:100vh">
@@ -209,12 +209,12 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">是否删除此订单</h4>
+                        <h4 class="modal-title" id="myModalLabel">是否设置此订单为已付款</h4>
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" onclick="cancel_order()">删除</button>
+                        <button type="button" class="btn btn-success" onclick="cancel_order()">已付款</button>
                     </div>
                 </div>
             </div>
